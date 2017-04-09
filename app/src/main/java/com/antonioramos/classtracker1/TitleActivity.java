@@ -32,7 +32,7 @@ public class TitleActivity extends AppCompatActivity implements View.OnClickList
 
         }
         else if(view.getId() == R.id.saveLocation_button){
-            Intent intent = new Intent(getApplicationContext(), MyLocation.class);
+            Intent intent = new Intent(getApplicationContext(), CurrentLocationActivity.class);
             startActivity(intent);
         }
 
