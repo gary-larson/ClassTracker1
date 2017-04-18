@@ -30,6 +30,13 @@ public class TitleActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if(view.getId() == R.id.lookUpClass_button){
 
+                 /*Uri gmmIntentUri = Uri.parse("google.navigation:q=36.632570,-87.353762&mode=w");
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            startActivity(mapIntent);*/
+            Intent intent = new Intent(getApplicationContext(), Navigation.class);
+            startActivity(intent);
+
         }
         else if(view.getId() == R.id.saveLocation_button){
             Intent intent = new Intent(getApplicationContext(), CurrentLocationActivity.class);
