@@ -3,39 +3,4 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="@string/location_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/location_textView"
-        android:textSize="20sp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="@string/edit_location_label"
-        android:ems="10"
-        android:id="@+id/location_editText" />
-
-    <TextView
-        android:text="@string/longitude_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/longitude_TextView"
-        android:textSize="20sp" />
-
-    <TextView
-        android:text="@string/latitude_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/latitude_TextView"
-        android:textSize="20sp" />
-
-    <Button
-        android:text="@string/record_location_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/record_location_button" />
-
 </LinearLayout>
