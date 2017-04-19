@@ -40,6 +40,7 @@
         </activity>
         <activity android:name=".MapsActivity" />
         <activity android:name=".CurrentLocationActivity" />
+        <activity android:name=".Navigation"/>
         <activity android:name=".LocationListActivity"></activity>
     </application>
 

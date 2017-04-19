@@ -21,21 +21,15 @@ public class TitleActivity extends AppCompatActivity implements View.OnClickList
         for (int id:idButton) {
             Button b = (Button)findViewById(id);
             b.setOnClickListener(this);
-
         }
-
     }
 
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.lookUpClass_button){
-
-                 /*Uri gmmIntentUri = Uri.parse("google.navigation:q=36.632570,-87.353762&mode=w");
-            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-            mapIntent.setPackage("com.google.android.apps.maps");
-            startActivity(mapIntent);*/
-            Intent intent = new Intent(getApplicationContext(), Navigation.class);
+            Intent intent = new Intent(getApplicationContext(), LocationListActivity.class);
             startActivity(intent);
+
 
         }
         else if(view.getId() == R.id.saveLocation_button){

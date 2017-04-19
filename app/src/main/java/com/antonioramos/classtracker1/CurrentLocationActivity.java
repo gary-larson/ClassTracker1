@@ -21,6 +21,8 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
+import java.util.ArrayList;
+
 /**
  * Created by Gary
  * Class to record locations as waypoints for app
@@ -120,6 +122,7 @@ Setup variables and constants to call list intent to add the current location an
                 if (latitude != 0) {
                     // make sure name was entered
                     if (!(s == null || s.length() == 0)) {
+
                         // set up intent
                         Intent intent = new Intent(getApplicationContext(), LocationListActivity.class);
                         // add variables to intent and start it
@@ -127,6 +130,9 @@ Setup variables and constants to call list intent to add the current location an
                         intent.putExtra(LONGITUDE_KEY, longitude);
                         intent.putExtra(LATITUDE_KEY, latitude);
                         startActivity(intent);
+
+                        Toast.makeText(CurrentLocationActivity.this, "Location saved "+s, Toast.LENGTH_SHORT).show();
+
                     } else {
                         Toast.makeText(CurrentLocationActivity.this, "need location name to save", Toast.LENGTH_SHORT).show();
                     }
@@ -207,11 +213,12 @@ Setup variables and constants to call list intent to add the current location an
         GetLocation();
     }
 
-    private void GetLocation () {
+    public void GetLocation () {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                     mGoogleApiClient);
+
             if (mLastLocation != null) {
                 mLatitudeText.setText(String.format("%s: %f", mLatitudeLabel,
                         mLastLocation.getLatitude()));
@@ -222,6 +229,7 @@ Setup variables and constants to call list intent to add the current location an
                 LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
             }
         }
+
     }
 
     // if connection is suspended reconnect
