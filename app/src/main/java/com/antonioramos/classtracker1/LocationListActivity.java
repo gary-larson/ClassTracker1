@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -26,6 +29,14 @@ public class LocationListActivity extends ListActivity {
     private ArrayList<MyLocation> myLocations;
     public static final String DATA_FILENAME = "locations.txt";
 
+    public static final String LONGITUDE_KEY = "longitude";
+    public static final String LATITUDE_KEY = "latitude";
+    public static final String NAME_KEY = "name";
+    private String name;
+    private double latitude,longitude;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +52,14 @@ public class LocationListActivity extends ListActivity {
         Intent intent = getIntent();
 
         if (intent.hasExtra(CurrentLocationActivity.NAME_KEY)) {
-            String name = intent.getStringExtra(CurrentLocationActivity.NAME_KEY);
-            double longitude = intent.getDoubleExtra(CurrentLocationActivity.LONGITUDE_KEY, 0);
-            double latitude = intent.getDoubleExtra(CurrentLocationActivity.LATITUDE_KEY, 0);
+            name = intent.getStringExtra(CurrentLocationActivity.NAME_KEY);
+            longitude = intent.getDoubleExtra(CurrentLocationActivity.LONGITUDE_KEY, 0);
+            latitude = intent.getDoubleExtra(CurrentLocationActivity.LATITUDE_KEY, 0);
             MyLocation myLocation = new MyLocation(name, longitude, latitude);
             myLocations.add(myLocation);
             writeData();
+            Intent intent2 = new Intent(getApplicationContext(), TitleActivity.class);
+            startActivity(intent2);
         }
 
         // Setup adapter
@@ -55,6 +68,28 @@ public class LocationListActivity extends ListActivity {
                 myLocations);
 
         setListAdapter(adapter);
+
+        ListView lv = getListView();
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View v, int position,
+                                    long arg3)
+            {
+                MyLocation location =(MyLocation)adapter.getItemAtPosition(position);
+
+                Intent intent = new Intent(getApplicationContext(), Navigation.class);
+                // add variables to intent and start it
+                intent.putExtra(NAME_KEY, location.getName());
+                intent.putExtra(LONGITUDE_KEY, location.getLongitude());
+                intent.putExtra(LATITUDE_KEY, location.getLatitude());
+                startActivity(intent);
+
+                Log.i("this should work", "*********************************"+ location.getLatitude()+position);
+            }
+        });
+
     }
 
     /*
