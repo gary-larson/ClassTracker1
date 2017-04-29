@@ -24,9 +24,9 @@ public class Navigation extends AppCompatActivity{
 
 
         Intent intent = getIntent();
-        name = intent.getStringExtra(LocationListActivity.NAME_KEY);
-        longitude = intent.getDoubleExtra(LocationListActivity.LONGITUDE_KEY, 0);
-        latitude = intent.getDoubleExtra(LocationListActivity.LATITUDE_KEY, 0);
+        name = intent.getStringExtra(CurrentLocationActivity.NAME_KEY);
+        longitude = intent.getDoubleExtra(CurrentLocationActivity.LONGITUDE_KEY, 0);
+        latitude = intent.getDoubleExtra(CurrentLocationActivity.LATITUDE_KEY, 0);
 
         Uri gmmIntentUri = Uri.parse("google.navigation:q="+latitude+","+ longitude+"&mode=w");
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);

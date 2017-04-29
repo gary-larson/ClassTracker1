@@ -11,7 +11,8 @@ import android.widget.Button;
  */
 
 public class TitleActivity extends AppCompatActivity implements View.OnClickListener{
-    private int idButton [] ={R.id.map_button,R.id.saveLocation_button,R.id.lookUpClass_button};
+    private int idButton [] ={R.id.map_button,R.id.saveLocation_button,R.id.lookUpClass_button,
+            R.id.lookupLoctions_button};
 
     @Override
     protected void onCreate(Bundle saveInstanceState){
@@ -42,6 +43,10 @@ public class TitleActivity extends AppCompatActivity implements View.OnClickList
         else if(view.getId() == R.id.map_button){
 
             Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+            startActivity(intent);
+        }
+        else if(view.getId() == R.id.lookupLoctions_button) {
+            Intent intent = new Intent(getApplicationContext(), LocationListActivity.class);
             startActivity(intent);
         }
 

@@ -35,7 +35,7 @@
         android:text="Look up save locations"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/saveLoactions_button" />
+        android:id="@+id/lookupLoctions_button" />
 
     <Button
         android:text="Set Class Schedule"
