@@ -29,6 +29,7 @@ class to display available locations and save new ones
  */
 public class LocationListActivity extends ListActivity {
 
+
     private ArrayAdapter<MyLocation> adapter;
     private ArrayList<MyLocation> allLocations;
     private ArrayList<MyLocation> myLocations;
@@ -90,6 +91,8 @@ public class LocationListActivity extends ListActivity {
                 intent.putExtra(CurrentLocationActivity.NAME_KEY, location.getName());
                 intent.putExtra(CurrentLocationActivity.LONGITUDE_KEY, location.getLongitude());
                 intent.putExtra(CurrentLocationActivity.LATITUDE_KEY, location.getLatitude());
+
+                intent.putExtra("position", position);
                 startActivity(intent);
 
                 Log.i("this should work", "*********************************"+ location.getLatitude()+position);
@@ -97,9 +100,6 @@ public class LocationListActivity extends ListActivity {
         });
 
     }
-
-
-
 
     /*
     Created by Gary
