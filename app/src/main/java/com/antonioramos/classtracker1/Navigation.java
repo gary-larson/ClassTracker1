@@ -3,6 +3,7 @@ package com.antonioramos.classtracker1;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -107,26 +108,26 @@ public class Navigation extends AppCompatActivity {
     @Override
     public boolean onTouchEvent( MotionEvent motionEvent) {
         ImageView iv = (ImageView)findViewById(R.id.class_imageView);
-        switch (motionEvent.getAction()){
-          case MotionEvent.ACTION_DOWN:
 
-              //if else statement allows user to cycle through images as many times as they want
-              //if image unavailable display toast message
-              if(noPhoto){
-                  Toast.makeText(this,"No Image Available",Toast.LENGTH_SHORT).show();
-              }
-              else if(nextPicture % 3 != 0 ){
-                  currentPicture++;
-                  iv.setImageResource(indoorPics[currentPicture]);
-                  nextPicture++;
-             }
-              else{
-                  currentPicture -= 2;
-                  nextPicture -=2 ;
-                  iv.setImageResource(indoorPics[currentPicture]);
-              }
-          break;
-      }
+        if( motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+            //adds vibration feedback to buttons
+            Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+            vibrator.vibrate(100);
+
+            //if else statement allows user to cycle through images as many times as they want
+            //if image unavailable display toast message
+            if (noPhoto) {
+                Toast.makeText(this, "No Image Available", Toast.LENGTH_SHORT).show();
+            } else if (nextPicture % 3 != 0) {
+                currentPicture++;
+                iv.setImageResource(indoorPics[currentPicture]);
+                nextPicture++;
+            } else {
+                currentPicture -= 2;
+                nextPicture -= 2;
+                iv.setImageResource(indoorPics[currentPicture]);
+            }
+        }
         return true;
     }
 }

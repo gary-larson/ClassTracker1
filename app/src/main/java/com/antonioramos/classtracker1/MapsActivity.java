@@ -1,6 +1,7 @@
 package com.antonioramos.classtracker1;
 
 import android.content.Intent;
+import android.os.Vibrator;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -123,6 +124,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onInfoWindowClick(Marker marker) {
+        //adds vibration feedback to marker windows
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        vibrator.vibrate(100);
         //.getPosition returns Latitude and longitude formatted in LatLng ex "36.534342,-87.354328"
         // need to convert to string
         String s = marker.getPosition().toString();

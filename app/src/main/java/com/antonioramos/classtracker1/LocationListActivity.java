@@ -4,6 +4,7 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -70,20 +71,21 @@ public class LocationListActivity extends ListActivity {
         }
 
         // Setup adapter
-        adapter = new ArrayAdapter<MyLocation>(this,
+        adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1,
                 allLocations);
-
         setListAdapter(adapter);
-
         ListView lv = getListView();
 
+        //pass selected destination data to Navigation class - by Antonio Ramos
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             @Override
             public void onItemClick(AdapterView<?> adapter, View v, int position,
                                     long arg3)
             {
+                Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+                vibrator.vibrate(100);
                 MyLocation location =(MyLocation)adapter.getItemAtPosition(position);
 
                 Intent intent = new Intent(getApplicationContext(), Navigation.class);
@@ -91,11 +93,8 @@ public class LocationListActivity extends ListActivity {
                 intent.putExtra(CurrentLocationActivity.NAME_KEY, location.getName());
                 intent.putExtra(CurrentLocationActivity.LONGITUDE_KEY, location.getLongitude());
                 intent.putExtra(CurrentLocationActivity.LATITUDE_KEY, location.getLatitude());
-
                 intent.putExtra("position", position);
                 startActivity(intent);
-
-                Log.i("this should work", "*********************************"+ location.getLatitude()+position);
             }
         });
 
