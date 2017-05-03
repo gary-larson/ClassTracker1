@@ -1,45 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#9A000B">
 
-    <TextView
-        android:text="APSU Class Locater"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="normal|bold" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:text="To map"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/map_button" />
+        <TextView
+            android:text="@string/apsu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:textColor="#ffffff"
+            android:layout_marginTop="7dp"/>
 
-    <Button
-        android:text="Save Current Location"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/saveLocation_button" />
+        <TextView
+            android:text="@string/class_locator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="7dp"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lookUpClass_button"
-        android:text="Look up Class" />
+        <Button
+            android:text="@string/to_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/map_button"
+            android:background="#ffffff"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="7dp"/>
 
-    <Button
-        android:text="Look up save locations"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lookupLoctions_button" />
+        <Button
+            android:text="@string/save_current_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/saveLocation_button"
+            android:background="#ffffff"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="7dp"/>
 
-    <Button
-        android:text="Set Class Schedule"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button5" />
-</LinearLayout>
+        <Button
+            android:text="@string/look_up_class"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lookupClass_button"
+            android:background="#ffffff"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="7dp"/>
+
+        <Button
+            android:text="@string/look_up_saved_locations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lookupLocations_button"
+            android:background="#ffffff"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="7dp"/>
+
+        <Button
+            android:text="@string/set_class_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button5"
+            android:background="#ffffff"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="7dp"/>
+
+        <TextView
+            android:text="@string/go"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="55sp"
+            android:textColor="#ffffff"
+            android:layout_marginTop="7dp"/>
+
+        <TextView
+            android:text="@string/govs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="60sp"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+</ScrollView>

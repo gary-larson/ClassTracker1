@@ -7,4 +7,13 @@
     <string name="location_label">Enter Location</string>
     <string name="edit_location_label">Location</string>
     <string name="no_location_detected">No Location found</string>
+    <string name="apsu">APSU</string>
+    <string name="class_locator">Class Locator</string>
+    <string name="to_map">To Map</string>
+    <string name="save_current_location">Save Current Location</string>
+    <string name="look_up_class">Look up Class</string>
+    <string name="look_up_saved_locations">Look up saved locations</string>
+    <string name="set_class_schedule">Set Class Schedule</string>
+    <string name="go">Go</string>
+    <string name="govs">GOVS!</string>
 </resources>
