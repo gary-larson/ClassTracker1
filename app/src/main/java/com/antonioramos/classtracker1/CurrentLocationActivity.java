@@ -217,8 +217,8 @@ Setup variables and constants to call list intent to add the current location an
     public void GetLocation () {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
-            mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
-                    mGoogleApiClient);
+        //    mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+         //           mGoogleApiClient);
 
           //  if (mLastLocation != null) {
           //      mLatitudeText.setText(String.format("%s: %f", mLatitudeLabel,
