@@ -41,7 +41,9 @@ public class TitleActivity extends Activity implements View.OnClickListener{
         }
 
         if(view.getId() == R.id.lookupClass_button){
+
             Intent intent = new Intent(getApplicationContext(), LocationListActivity.class);
+            intent.putExtra(CurrentLocationActivity.LIST_KEY, "APSU");
             startActivity(intent);
         }
         else if(view.getId() == R.id.saveLocation_button){
@@ -59,6 +61,7 @@ public class TitleActivity extends Activity implements View.OnClickListener{
         }
         else if(view.getId() == R.id.lookupLocations_button) {
             Intent intent = new Intent(getApplicationContext(), LocationListActivity.class);
+            intent.putExtra(CurrentLocationActivity.LIST_KEY, "Saved");
             startActivity(intent);
         }
         else {

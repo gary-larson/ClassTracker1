@@ -11,8 +11,8 @@
     <string name="class_locator">Class Locator</string>
     <string name="to_map">To Map</string>
     <string name="save_current_location">Save Current Location</string>
-    <string name="look_up_class">Look up Class</string>
-    <string name="look_up_saved_locations">Look up saved locations</string>
+    <string name="look_up_class">Look up APSU Locations</string>
+    <string name="look_up_saved_locations">Look up Saved locations</string>
     <string name="set_class_schedule">Set Class Schedule</string>
     <string name="go">Go</string>
     <string name="govs">GOVS!</string>
