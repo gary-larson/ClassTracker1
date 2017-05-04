@@ -39,6 +39,7 @@ Setup variables and constants to call list intent to add the current location an
     public static final String LONGITUDE_KEY = "longitude";
     public static final String LATITUDE_KEY = "latitude";
     public static final String NAME_KEY = "name";
+    public static final String LIST_KEY = "list";
 
 
     private GoogleApiClient mGoogleApiClient;
@@ -75,10 +76,10 @@ Setup variables and constants to call list intent to add the current location an
         }); */
 
         // Setup variables for labels
-        mLatitudeLabel = getResources().getString(R.string.latitude_label);
-        mLongitudeLabel = getResources().getString(R.string.longitude_label);
-        mLatitudeText = (TextView) findViewById((R.id.latitude_TextView));
-        mLongitudeText = (TextView) findViewById((R.id.longitude_TextView));
+     //   mLatitudeLabel = getResources().getString(R.string.latitude_label);
+     //   mLongitudeLabel = getResources().getString(R.string.longitude_label);
+     //   mLatitudeText = (TextView) findViewById((R.id.latitude_TextView));
+     //   mLongitudeText = (TextView) findViewById((R.id.longitude_TextView));
 
         // make sure permissions have been accepted
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -219,15 +220,15 @@ Setup variables and constants to call list intent to add the current location an
             mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                     mGoogleApiClient);
 
-            if (mLastLocation != null) {
-                mLatitudeText.setText(String.format("%s: %f", mLatitudeLabel,
-                        mLastLocation.getLatitude()));
-                mLongitudeText.setText(String.format("%s: %f", mLongitudeLabel,
-                        mLastLocation.getLongitude()));
-            } else {
+          //  if (mLastLocation != null) {
+          //      mLatitudeText.setText(String.format("%s: %f", mLatitudeLabel,
+          //              mLastLocation.getLatitude()));
+           //     mLongitudeText.setText(String.format("%s: %f", mLongitudeLabel,
+          //              mLastLocation.getLongitude()));
+          //  } else {
                 // if no last location setup requester
                 LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
-            }
+           // }
         }
 
     }

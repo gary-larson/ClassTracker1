@@ -46,9 +46,9 @@ public class LocationListActivity extends ListActivity {
         // Get locations from file
         myLocations = readData(MY_FILENAME);
 
-        for (MyLocation loc : myLocations) {
-            allLocations.add(loc);
-        }
+     //   for (MyLocation loc : myLocations) {
+     //       allLocations.add(loc);
+     //   }
 
 
         /*
@@ -64,16 +64,25 @@ public class LocationListActivity extends ListActivity {
             double latitude = intent.getDoubleExtra(CurrentLocationActivity.LATITUDE_KEY, 0);
             MyLocation myLocation = new MyLocation(name, longitude, latitude);
             myLocations.add(myLocation);
-            allLocations.add(myLocation);
+            //allLocations.add(myLocation);
             writeData();
             Intent intent2 = new Intent(getApplicationContext(), TitleActivity.class);
             startActivity(intent2);
         }
 
         // Setup adapter
-        adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1,
-                allLocations);
+        if (intent.hasExtra(CurrentLocationActivity.LIST_KEY)) {
+            String list = intent.getStringExtra(CurrentLocationActivity.LIST_KEY);
+            if (list.equals("APSU")) {
+                adapter = new ArrayAdapter<>(this,
+                        android.R.layout.simple_list_item_1,
+                        allLocations);
+            } else if (list.equals("Saved")) {
+                adapter = new ArrayAdapter<>(this,
+                        android.R.layout.simple_list_item_1,
+                        myLocations);
+            }
+        }
         setListAdapter(adapter);
         ListView lv = getListView();
 

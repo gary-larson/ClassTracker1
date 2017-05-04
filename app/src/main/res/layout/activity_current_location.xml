@@ -17,7 +17,7 @@
         android:hint="@string/edit_location_label"
         android:ems="10"
         android:id="@+id/location_editText" />
-
+<!--
     <TextView
         android:text="@string/longitude_label"
         android:layout_width="wrap_content"
@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/latitude_TextView"
         android:textSize="20sp" />
+        -->
 
     <Button
         android:text="@string/record_location_label"
