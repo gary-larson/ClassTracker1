@@ -27,12 +27,10 @@ public class Navigation extends AppCompatActivity {
     private double longitude;
     String name;
 
-
-
-    int indoorPics[] = {R.drawable.apsu1,R.drawable.apsu2,R.drawable.apsu3,R.drawable.maynard1,
+    int indoorPics[] = {R.drawable.apsu1,R.drawable.apsu3,R.drawable.apsu4,R.drawable.maynard1,
             R.drawable.maynard2,R.drawable.maynard3,R.drawable.tech1,R.drawable.tech2,
             R.drawable.tech3,R.drawable.sun1,R.drawable.sundquist_2, R.drawable.sundquist_3,
-            R.drawable.book1,R.drawable.book2,R.drawable.nophoto, R.drawable.nophoto};
+            R.drawable.book1,R.drawable.book2,R.drawable.book3, R.drawable.nophoto};
 
     @Override
     protected void onCreate(Bundle saveInstanceState){

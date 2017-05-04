@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000000">
 
     <TextView
         android:text="@string/location_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/location_textView"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textColor="#ffffff" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -16,7 +19,8 @@
         android:inputType="textPersonName"
         android:hint="@string/edit_location_label"
         android:ems="10"
-        android:id="@+id/location_editText" />
+        android:id="@+id/location_editText"
+        android:textColor="#ffffff" />
 <!--
     <TextView
         android:text="@string/longitude_label"
@@ -37,7 +41,18 @@
         android:text="@string/record_location_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/record_location_button" />
+        android:id="@+id/record_location_button"
+        android:background="#ffffff"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="#000000" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/foldedmap"
+        android:id="@+id/imageView"
+        android:contentDescription="@string/picture_of_cartoon_map" />
 
 
 </LinearLayout>
