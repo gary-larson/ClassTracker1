@@ -7,6 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/one"
-        android:id="@+id/class_imageView" />
+        app:srcCompat="@drawable/apsu1"
+        android:id="@+id/class_imageView"
+        android:background="#000000"/>
 </LinearLayout>

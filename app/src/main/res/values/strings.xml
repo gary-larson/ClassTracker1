@@ -12,8 +12,10 @@
     <string name="to_map">To Map</string>
     <string name="save_current_location">Save Current Location</string>
     <string name="look_up_class">Look up APSU Locations</string>
-    <string name="look_up_saved_locations">Look up Saved locations</string>
+    <string name="look_up_saved_locations">Look Up Saved Locations</string>
     <string name="set_class_schedule">Set Class Schedule</string>
     <string name="go">Go</string>
     <string name="govs">GOVS!</string>
+    <string name="look_up_pictures">Look Up Pictures</string>
+    <string name="picture_of_cartoon_map">picture of cartoon map</string>
 </resources>

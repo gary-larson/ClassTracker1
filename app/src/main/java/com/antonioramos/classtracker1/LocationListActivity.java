@@ -83,6 +83,7 @@ public class LocationListActivity extends ListActivity {
                         myLocations);
             }
         }
+        final boolean checkPhotos = intent.getBooleanExtra("checkPhoto",false);
         setListAdapter(adapter);
         ListView lv = getListView();
 
@@ -103,6 +104,7 @@ public class LocationListActivity extends ListActivity {
                 intent.putExtra(CurrentLocationActivity.LONGITUDE_KEY, location.getLongitude());
                 intent.putExtra(CurrentLocationActivity.LATITUDE_KEY, location.getLatitude());
                 intent.putExtra("position", position);
+                intent.putExtra("checkPhoto", checkPhotos);
                 startActivity(intent);
             }
         });

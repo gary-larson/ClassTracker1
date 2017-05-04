@@ -21,15 +21,16 @@ public class Navigation extends AppCompatActivity {
 
     private int nextPicture =1;
     private int currentPicture;
-    private int unavailableImage = 2;
-    boolean noPhoto =false;
-    double latitude;
-    double longitude;
+    private int unavailableImage = 5;
+    private boolean noPhoto =false;
+    private double latitude;
+    private double longitude;
     String name;
 
-
-    int indoorPics[] = {R.drawable.one, R.drawable.two,R.drawable.three, R.drawable.four,
-            R.drawable.five, R.drawable.six, R.drawable.nophoto};
+    int indoorPics[] = {R.drawable.apsu1,R.drawable.apsu3,R.drawable.apsu4,R.drawable.maynard1,
+            R.drawable.maynard2,R.drawable.maynard3,R.drawable.tech1,R.drawable.tech2,
+            R.drawable.tech3,R.drawable.sun1,R.drawable.sundquist_2, R.drawable.sundquist_3,
+            R.drawable.book1,R.drawable.book2,R.drawable.book3, R.drawable.nophoto};
 
     @Override
     protected void onCreate(Bundle saveInstanceState){
@@ -44,7 +45,12 @@ public class Navigation extends AppCompatActivity {
             longitude = intent.getDoubleExtra(CurrentLocationActivity.LONGITUDE_KEY, 0);
             latitude = intent.getDoubleExtra(CurrentLocationActivity.LATITUDE_KEY, 0);
             int pictureSet = intent.getIntExtra("position", 0);
-            startGoogleMaps();
+            boolean checkPhoto = intent.getBooleanExtra("checkPhoto",false);
+
+            //if user just wants to see pictures don't call map intent
+            if(!checkPhoto) {
+                startGoogleMaps();
+            }
             setUpPictures(pictureSet);
         }
         else{

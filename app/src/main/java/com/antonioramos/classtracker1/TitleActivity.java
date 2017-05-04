@@ -17,7 +17,7 @@ import android.widget.Button;
 
 public class TitleActivity extends Activity implements View.OnClickListener{
     private int idButton [] ={R.id.map_button,R.id.saveLocation_button,R.id.lookupClass_button,
-            R.id.lookupLocations_button};
+            R.id.lookupLocations_button, R.id.pictures_button};
 
     @Override
     protected void onCreate(Bundle saveInstanceState){
@@ -28,7 +28,6 @@ public class TitleActivity extends Activity implements View.OnClickListener{
 
         for (int id:idButton) {
             Button b = (Button)findViewById(id);
-           // b.performHapticFeedback(1);
             b.setOnClickListener(this);
         }
     }
@@ -63,6 +62,13 @@ public class TitleActivity extends Activity implements View.OnClickListener{
             Intent intent = new Intent(getApplicationContext(), LocationListActivity.class);
             intent.putExtra(CurrentLocationActivity.LIST_KEY, "Saved");
             startActivity(intent);
+        }
+        else if(view.getId() == R.id.pictures_button){
+            Intent intent = new Intent(getApplicationContext(), LocationListActivity.class);
+            intent.putExtra(CurrentLocationActivity.LIST_KEY, "APSU");
+            intent.putExtra("checkPhoto", true);
+            startActivity(intent);
+            Log.i("onClick", "Pictures **************");
         }
         else {
             Log.i("onClick", "Title Activity **************");
